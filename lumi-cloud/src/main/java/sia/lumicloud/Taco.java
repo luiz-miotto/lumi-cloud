@@ -1,4 +1,5 @@
 package sia.lumicloud;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 //end::allButValidation[]
@@ -26,6 +27,11 @@ public class Taco {
     // tag::allButValidation[]
     @NotNull
     @Size(min=1, message="You must choose at least 1 ingredient")
-    private List<String> ingredients;
+    private List<IngredientRef> ingredients = new ArrayList<>();
+
+
+    public void addIngredient(Ingredient taco){
+        this.ingredients.add(new IngredientRef(taco.getId()));
+    }
 
 }
