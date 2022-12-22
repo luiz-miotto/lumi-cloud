@@ -8,11 +8,15 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 // tag::allButValidation[]
 import lombok.Data;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.relational.core.mapping.Table;
 
 
+@Table
 @Data
 public class Taco {
 
+    @Id
     private Long id;
     private Date createdAt = new Date();
     // end::allButValidation[]
