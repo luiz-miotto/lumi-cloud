@@ -1,15 +1,24 @@
 package sia.lumicloud;
 
-import lombok.*;
+
+import lombok.AccessLevel;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import org.springframework.data.annotation.Id;
-import org.springframework.data.domain.Persistable;
-import org.springframework.data.relational.core.mapping.Table;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+
+
+
+
 
 @Data
-@Table
+@Document
 @AllArgsConstructor
-@NoArgsConstructor(access= AccessLevel.PRIVATE, force=true)
-public class Ingredient implements Persistable<String> {
+@NoArgsConstructor(access=AccessLevel.PRIVATE, force=true)
+public class Ingredient  {
 
     @Id
     private String id;
@@ -20,8 +29,5 @@ public class Ingredient implements Persistable<String> {
         WRAP, PROTEIN, VEGGIES, CHEESE, SAUCE
     }
 
-    @Override
-    public boolean isNew() {
-        return false;
-    }
+
 }

@@ -1,18 +1,19 @@
 package sia.lumicloud.data;
 
 
-import java.util.Optional;
 
 import org.springframework.data.repository.CrudRepository;
-import org.springframework.stereotype.Repository;
-import sia.lumicloud.Ingredient;
+import org.springframework.stereotype.Component;
 
+import sia.lumicloud.Ingredient;
+import java.util.UUID;
+
+
+
+@Component
 public interface IngredientRepository extends CrudRepository<Ingredient,String> {
 
-    Iterable<Ingredient> findAll();
-    Optional<Ingredient> findById(String id);
 
-    Ingredient save(Ingredient ingredient);
 }
 
 
